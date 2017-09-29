@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * 
+ * @author Administrator
+ *
+ */
 public class MedianOfFlow {
 	static ArrayList<Integer> list = new ArrayList<>();
     public static void Insert(Integer num) {
