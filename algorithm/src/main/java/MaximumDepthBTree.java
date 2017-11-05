@@ -7,12 +7,17 @@ public class MaximumDepthBTree {
 		TreeNode1 node1 = new TreeNode1(1);
 		TreeNode1 node2 = new TreeNode1(2);
 		TreeNode1 node3 = new TreeNode1(3);
+		TreeNode1 node4 = new TreeNode1(4);
+		TreeNode1 node5 = new TreeNode1(4);
+		TreeNode1 node6 = new TreeNode1(4);
+		TreeNode1 node7 = new TreeNode1(4);
 		node1.left = node2;
 		node1.right = node3;
-		
-		TreeNode1 node4 = new TreeNode1(4);
 		node3.left = node4;
-		int flag = maxDepth2(node4);
+		node2.left = node5;
+		node5.left = node6;
+		node6.left = node7;
+		int flag = maxDepth2(node1);
 		System.out.println(flag);
 	}
 	
@@ -41,9 +46,8 @@ public class MaximumDepthBTree {
 	}
 	public static int maxDepth2(TreeNode1 root){
 		if(root == null) return 0;
-		System.out.println(root.val);
-		int depthLeft = maxDepth2(root.left) + 1;
-		int depthRight = maxDepth2(root.right) + 1;
+		int depthLeft = maxDepth2(root.left) + root.val;
+		int depthRight = maxDepth2(root.right) + root.val;
 		return depthLeft > depthRight ? depthLeft : depthRight;
 	}
 	
